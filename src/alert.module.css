@@ -1,0 +1,34 @@
+.alert {
+  --imdz-alert-color: var(--imdz-text);
+
+  display: grid;
+  gap: 0.375rem;
+  box-sizing: border-box;
+  padding: 0.875rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--imdz-alert-color) 45%, transparent);
+  border-left: 3px solid var(--imdz-alert-color);
+  border-radius: var(--imdz-radius);
+  background: color-mix(in srgb, var(--imdz-alert-color) 6%, transparent);
+  color: var(--imdz-text);
+  font: 400 0.875rem/1.5 var(--imdz-font);
+}
+
+.title {
+  margin: 0;
+  color: var(--imdz-alert-color);
+  font: 600 0.75rem/1.3 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-transform: uppercase;
+}
+
+.success {
+  --imdz-alert-color: var(--imdz-success);
+}
+
+.warning {
+  --imdz-alert-color: var(--imdz-warning);
+}
+
+.danger {
+  --imdz-alert-color: var(--imdz-danger);
+}

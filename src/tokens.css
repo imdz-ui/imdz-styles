@@ -1,0 +1,49 @@
+/*
+ * Design tokens: the source of the default values.
+ *
+ * Components don't depend on this file. When @imdz/react is built
+ * (its scripts/build.mjs), every var(--imdz-x) in a component's CSS
+ * becomes var(--imdz-x, value) with the value from here, so each
+ * component works on its own and anyone can override any token in :root.
+ *
+ * The palette is monochrome: black, white and grays. Color only shows up in
+ * states (success, warning, error).
+ *
+ * light-dark(light, dark): the store website and the Web Components load
+ * this file as is and follow the page's color-scheme. In the published
+ * package, the build keeps only the light value and moves the dark one to
+ * dist/dark.css.
+ */
+:where(:root) {
+  /* The @font-face rules are in fonts.css; the components put them on the
+     page themselves. */
+  --imdz-font: "imdz Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  --imdz-font-mono: "imdz JetBrains Mono", ui-monospace, "SF Mono", Menlo,
+    Consolas, monospace;
+  --imdz-radius: 0px;
+  --imdz-tracking: 0.08em;
+
+  --imdz-bg: light-dark(#ffffff, #000000);
+  --imdz-surface: light-dark(#f2f2f2, #0d0d0d);
+  --imdz-border: light-dark(#c4c4c4, #2e2e2e);
+  --imdz-text: light-dark(#000000, #ffffff);
+  --imdz-muted: light-dark(#5e5e5e, #9a9a9a);
+
+  --imdz-primary: var(--imdz-text);
+  --imdz-on-primary: var(--imdz-bg);
+  --imdz-success: light-dark(#0f7a3d, #5dffa0);
+  --imdz-warning: light-dark(#8f5a00, #ffd166);
+  --imdz-danger: light-dark(#c4001a, #ff5c6c);
+  --imdz-on-danger: light-dark(#ffffff, #000000);
+
+  --imdz-focus: var(--imdz-text);
+}
+
+:where([data-imdz-theme="light"]) {
+  color-scheme: light;
+}
+
+:where([data-imdz-theme="dark"]) {
+  color-scheme: dark;
+}

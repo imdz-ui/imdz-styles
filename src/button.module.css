@@ -1,0 +1,86 @@
+.button {
+  --imdz-button-color: var(--imdz-primary);
+  --imdz-button-on: var(--imdz-on-primary);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-sizing: border-box;
+  height: 2.5rem;
+  padding: 0 1.125rem;
+  border: 1px solid var(--imdz-button-color);
+  border-radius: var(--imdz-radius);
+  background: var(--imdz-button-color);
+  color: var(--imdz-button-on);
+  font: 600 0.75rem/1 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 150ms, color 150ms, border-color 150ms,
+    box-shadow 150ms;
+}
+
+/* On hover it inverts: just the outline with a glow. */
+.button:hover:not(:disabled, [aria-disabled="true"]) {
+  background: transparent;
+  color: var(--imdz-button-color);
+  box-shadow: 0 0 18px
+    color-mix(in srgb, var(--imdz-button-color) 40%, transparent);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--imdz-focus);
+  outline-offset: 3px;
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.secondary {
+  border-color: var(--imdz-border);
+  background: transparent;
+  color: var(--imdz-text);
+}
+
+.secondary:hover:not(:disabled, [aria-disabled="true"]) {
+  border-color: var(--imdz-text);
+  background: var(--imdz-text);
+  color: var(--imdz-bg);
+  box-shadow: none;
+}
+
+.ghost {
+  border-color: transparent;
+  background: transparent;
+  color: var(--imdz-text);
+}
+
+.ghost:hover:not(:disabled, [aria-disabled="true"]) {
+  border-color: var(--imdz-border);
+  background: var(--imdz-surface);
+  color: var(--imdz-text);
+  box-shadow: none;
+}
+
+.danger {
+  --imdz-button-color: var(--imdz-danger);
+  --imdz-button-on: var(--imdz-on-danger);
+}
+
+.sm {
+  height: 2rem;
+  padding: 0 0.75rem;
+  font-size: 0.6875rem;
+}
+
+.lg {
+  height: 3rem;
+  padding: 0 1.5rem;
+  font-size: 0.8125rem;
+}

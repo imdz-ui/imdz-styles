@@ -1,0 +1,63 @@
+.field {
+  display: grid;
+  gap: 0.5rem;
+  font-family: var(--imdz-font);
+}
+
+.label {
+  color: var(--imdz-muted);
+  font: 600 0.6875rem/1 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-transform: uppercase;
+}
+
+.hint,
+.error {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.hint {
+  color: var(--imdz-muted);
+}
+
+.error {
+  color: var(--imdz-danger);
+}
+
+/* Base shared by input, textarea and select. */
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border: 1px solid var(--imdz-border);
+  border-radius: var(--imdz-radius);
+  background: transparent;
+  color: var(--imdz-text);
+  font: 400 0.875rem/1.4 var(--imdz-font);
+  transition: border-color 150ms, box-shadow 150ms;
+}
+
+.input::placeholder {
+  color: var(--imdz-muted);
+}
+
+.input:hover {
+  border-color: var(--imdz-muted);
+}
+
+.input:focus-visible {
+  border-color: var(--imdz-focus);
+  outline: 1px solid var(--imdz-focus);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--imdz-focus) 25%, transparent);
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--imdz-danger);
+}
+
+.input:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

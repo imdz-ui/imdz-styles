@@ -1,0 +1,49 @@
+.tabs {
+  font-family: var(--imdz-font);
+}
+
+.list {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  box-shadow: inset 0 -1px 0 var(--imdz-border);
+}
+
+.tab {
+  padding: 0.75rem 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--imdz-muted);
+  font: 600 0.6875rem/1 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 150ms, color 150ms;
+}
+
+.tab:hover {
+  color: var(--imdz-text);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--imdz-focus);
+  outline-offset: -4px;
+}
+
+/* The active tab is an inverted block. */
+.tab[aria-selected="true"] {
+  background: var(--imdz-text);
+  color: var(--imdz-bg);
+}
+
+.tab[aria-selected="true"]:focus-visible {
+  outline-color: var(--imdz-bg);
+}
+
+.panel {
+  padding-top: 1rem;
+  color: var(--imdz-text);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

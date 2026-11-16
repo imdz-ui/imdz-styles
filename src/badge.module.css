@@ -1,0 +1,41 @@
+.badge {
+  --imdz-badge-color: var(--imdz-muted);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--imdz-badge-color);
+  border-radius: var(--imdz-radius);
+  color: var(--imdz-badge-color);
+  font: 600 0.6875rem/1 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge::before {
+  content: "";
+  width: 0.375rem;
+  height: 0.375rem;
+  background: currentColor;
+}
+
+.primary {
+  --imdz-badge-color: var(--imdz-text);
+
+  background: var(--imdz-text);
+  color: var(--imdz-bg);
+}
+
+.success {
+  --imdz-badge-color: var(--imdz-success);
+}
+
+.warning {
+  --imdz-badge-color: var(--imdz-warning);
+}
+
+.danger {
+  --imdz-badge-color: var(--imdz-danger);
+}

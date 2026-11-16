@@ -1,0 +1,89 @@
+/* Used together with .input from field.css. */
+.select {
+  appearance: none;
+  padding-right: 2.25rem;
+  /* Arrow drawn with two gradients, so it inherits the text color. */
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 1rem center, right 0.6875rem center;
+  background-size: 0.3125rem 0.3125rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.select option {
+  background: var(--imdz-bg);
+  color: var(--imdz-text);
+}
+
+/*
+ * Custom dropdown, no JavaScript, using CSS customizable select
+ * (appearance: base-select). Where the browser doesn't support it, you get
+ * the system's native list and the field above.
+ */
+@supports (appearance: base-select) {
+  .select,
+  .select::picker(select) {
+    appearance: base-select;
+  }
+
+  .select {
+    align-items: center;
+    padding-right: 0.75rem;
+    background-image: none;
+  }
+
+  .select::picker-icon {
+    color: var(--imdz-muted);
+    transition: rotate 150ms;
+  }
+
+  .select:open::picker-icon {
+    rotate: 180deg;
+  }
+
+  .select::picker(select) {
+    margin: 0.25rem 0;
+    padding: 0;
+    border: 1px solid var(--imdz-text);
+    border-radius: var(--imdz-radius);
+    background: var(--imdz-bg);
+    box-shadow: 0 0 32px color-mix(in srgb, var(--imdz-text) 18%, transparent);
+  }
+
+  .select option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.625rem 0.75rem;
+    font: 400 0.875rem/1.4 var(--imdz-font);
+    cursor: pointer;
+  }
+
+  .select option:not(:last-child) {
+    border-bottom: 1px solid var(--imdz-border);
+  }
+
+  /* The option under the pointer or focus inverts, like the buttons. */
+  .select option:hover,
+  .select option:focus-visible {
+    outline: none;
+    background: var(--imdz-text);
+    color: var(--imdz-bg);
+  }
+
+  .select option:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* The selected option's mark is a square on the right. */
+  .select option::checkmark {
+    content: "";
+    order: 1;
+    width: 0.375rem;
+    height: 0.375rem;
+    background: currentColor;
+  }
+}

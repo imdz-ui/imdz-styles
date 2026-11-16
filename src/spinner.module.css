@@ -1,0 +1,27 @@
+.spinner {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--imdz-border);
+  border-top-color: var(--imdz-text);
+  border-radius: 50%;
+  animation: spin 700ms linear infinite;
+}
+
+.lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 2.4s;
+  }
+}

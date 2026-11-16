@@ -1,0 +1,32 @@
+{
+  "name": "@imdz/styles",
+  "version": "0.1.0",
+  "description": "The imdz design tokens, fonts and component CSS, shared by @imdz/react and @imdz/web-components.",
+  "license": "MIT",
+  "type": "module",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    "./tokens.css": "./src/tokens.css",
+    "./fonts.css": "./src/fonts.css",
+    "./fonts/*": "./fonts/*",
+    "./*.css": "./src/*.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "fonts",
+    "OFL.txt",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://imdz.dev",
+  "keywords": [
+    "css",
+    "design-tokens",
+    "components"
+  ]
+}

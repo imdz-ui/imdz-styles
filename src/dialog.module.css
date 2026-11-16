@@ -1,0 +1,82 @@
+.dialog {
+  box-sizing: border-box;
+  width: min(28rem, calc(100vw - 2rem));
+  /* Explicit: some resets (e.g. Tailwind) undo the native centering. */
+  margin: auto;
+  padding: 1.25rem;
+  border: 1px solid var(--imdz-text);
+  border-radius: var(--imdz-radius);
+  background: var(--imdz-bg);
+  color: var(--imdz-text);
+  font-family: var(--imdz-font);
+  box-shadow: 0 0 48px color-mix(in srgb, var(--imdz-text) 18%, transparent);
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.title {
+  margin: 0;
+  font: 600 0.875rem/1.4 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-transform: uppercase;
+}
+
+.close {
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+  border: 1px solid var(--imdz-border);
+  border-radius: var(--imdz-radius);
+  background: transparent;
+  color: var(--imdz-muted);
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 150ms, color 150ms, border-color 150ms;
+}
+
+.close:hover {
+  border-color: var(--imdz-text);
+  background: var(--imdz-text);
+  color: var(--imdz-bg);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--imdz-focus);
+  outline-offset: 2px;
+}
+
+.body {
+  margin-top: 0.75rem;
+  color: var(--imdz-muted);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.body > :first-child {
+  margin-top: 0;
+}
+
+.body > :last-child {
+  margin-bottom: 0;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}

@@ -1,0 +1,28 @@
+.skeleton {
+  display: block;
+  height: 1rem;
+  border-radius: var(--imdz-radius);
+  background: linear-gradient(
+    90deg,
+    var(--imdz-surface) 25%,
+    var(--imdz-border) 50%,
+    var(--imdz-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton {
+    animation: none;
+  }
+}

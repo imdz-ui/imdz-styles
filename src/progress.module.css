@@ -1,0 +1,35 @@
+.progress {
+  display: grid;
+  gap: 0.5rem;
+  font-family: var(--imdz-font);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--imdz-muted);
+  font: 600 0.6875rem/1 var(--imdz-font-mono);
+  letter-spacing: var(--imdz-tracking);
+  text-transform: uppercase;
+}
+
+.track {
+  box-sizing: border-box;
+  height: 0.75rem;
+  padding: 2px;
+  border: 1px solid var(--imdz-border);
+  border-radius: var(--imdz-radius);
+}
+
+/* Segmented bar. The width comes from the --imdz-progress-value variable. */
+.bar {
+  width: var(--imdz-progress-value, 0%);
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--imdz-text) 0 6px,
+    transparent 6px 8px
+  );
+  transition: width 300ms;
+}

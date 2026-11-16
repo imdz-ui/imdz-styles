@@ -1,0 +1,58 @@
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--imdz-text);
+  font: 400 0.875rem/1.4 var(--imdz-font);
+  cursor: pointer;
+}
+
+.input {
+  position: relative;
+  flex: none;
+  box-sizing: border-box;
+  width: 2.5rem;
+  height: 1.25rem;
+  margin: 0;
+  border: 1px solid var(--imdz-border);
+  border-radius: var(--imdz-radius);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 150ms, background-color 150ms;
+}
+
+.input::before {
+  content: "";
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: var(--imdz-muted);
+  transition: transform 150ms, background-color 150ms;
+}
+
+.input:hover {
+  border-color: var(--imdz-text);
+}
+
+.input:checked {
+  border-color: var(--imdz-text);
+  background: var(--imdz-text);
+}
+
+.input:checked::before {
+  background: var(--imdz-bg);
+  transform: translateX(1.25rem);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--imdz-focus);
+  outline-offset: 3px;
+}
+
+.switch:has(.input:disabled) {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

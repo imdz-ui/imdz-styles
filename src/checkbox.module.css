@@ -1,0 +1,52 @@
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--imdz-text);
+  font: 400 0.875rem/1.4 var(--imdz-font);
+  cursor: pointer;
+}
+
+.input {
+  display: grid;
+  flex: none;
+  place-content: center;
+  box-sizing: border-box;
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  border: 1px solid var(--imdz-border);
+  border-radius: var(--imdz-radius);
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 150ms;
+}
+
+.input::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--imdz-text);
+  transform: scale(0);
+  transition: transform 120ms;
+}
+
+.input:hover,
+.input:checked {
+  border-color: var(--imdz-text);
+}
+
+.input:checked::before {
+  transform: scale(1);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--imdz-focus);
+  outline-offset: 3px;
+}
+
+.checkbox:has(.input:disabled) {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
